@@ -1,5 +1,4 @@
 <?php
-
 ?>
 <html>
 <head>
@@ -7,6 +6,16 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+ 
+      <section class="main">
+        <a class="logo" href="#"><img src="folder gambar/logo.jpg" height="25px"></a>
+        <div class="fix">
+          <a class="a1" href="menu.php">
+            <i class="bx bx-home-outline"></i>
+          </a>
+        </div>
+      </section>
+</header>
 <div style="background-color:#ff852e;">
 <section class="menu-template" id="id-menu">
   <h1 class="menu-title">This is</h1><br>
