@@ -16,10 +16,11 @@
 <section class="menu" style="display: inline;">
     <div style="clear: both;"></div>
     <br>
-  </section>
-  <section class="menu" style="display: inline;">
-    <!-- first column -->
-    <!-- Menu Bakso Urat -->
+</section>
+<section class="menu" style="display: inline;">
+
+<!-- first column -->
+<!-- Menu Bakso Urat -->
 <article class="menu-section">
   <div class="menu-flip-card">
     <div class="menu-flip-card-inner">
