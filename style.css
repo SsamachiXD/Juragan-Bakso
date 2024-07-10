@@ -44,7 +44,7 @@
   .header {
     min-height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),
-      url("bakso.jpg") center/cover no-repeat;
+      url("folder gambar/bakso.jpg") center/cover no-repeat;
     position: relative;
     background-attachment: fixed;
   }
@@ -580,7 +580,7 @@
     border-radius: 5px;
     padding: 20px;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),
-      url("bakso.jpg") center/cover no-repeat;
+      url("folder gambar/bakso.jpg") center/cover no-repeat;
     position: relative;
     background-attachment: fixed;
   }
@@ -629,7 +629,7 @@
     height: 40vh;
     width: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),
-      url("bakso.jpg") center/cover no-repeat;
+      url("folder gambar/bakso.jpg") center/cover no-repeat;
     position: relative;
     background-attachment: fixed;
   }
@@ -856,7 +856,7 @@
     height: 40vh;
     width: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),
-      url("bakso.jpg") center/cover no-repeat;
+      url("folder gambar/bakso.jpg") center/cover no-repeat;
     position: relative;
     background-attachment: fixed;
   }
