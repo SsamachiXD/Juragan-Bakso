@@ -75,13 +75,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Validate name
     if (!validateName($name)) {
-        echo json_encode(["status" => "error", "message" => "Invalid name format. Name should only contain letters and spaces."]);
+        echo json_encode(["status" => "error", "message" => "Masukan nama dengan format yang benar."]);
         exit;
     }
 
     // Validate phone number
     if (!validatePhone($phone)) {
-        echo json_encode(["status" => "error", "message" => "Invalid phone number format."]);
+        echo json_encode(["status" => "error", "message" => "Masukan no telepon dengan format yang benar."]);
         exit;
     }
 
@@ -103,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Execute the query
         if ($stmt->execute()) {
-            echo json_encode(["status" => "success", "message" => "New order has been placed successfully!"]);
+            echo json_encode(["status" => "success", "message" => "Orderan kamu berhasil dibuat"]);
         } else {
             echo json_encode(["status" => "error", "message" => "Error: " . $stmt->error]);
         }
@@ -111,7 +111,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Close the statement
         $stmt->close();
     } else {
-        echo json_encode(["status" => "error", "message" => "Please fill in all required fields and ensure you have ordered at least one item."]);
+        echo json_encode(["status" => "error", "message" => "Anda belum memilih salah satu menu baksonya."]);
     }
 }
 
