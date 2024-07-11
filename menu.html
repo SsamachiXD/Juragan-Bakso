@@ -36,30 +36,31 @@
     }
   </script>
 </head>
-
 <body>
-  <section class="main">
-    <a class="logo" href="#"><img src="folder gambar/logo.jpg" alt="Logo"></a>
-    <div class="fix">
-      <a class="a1" href="#id-menu">Daftar Menu</a>
-      <a class="a1" href="index.html">
-        <i class="bx bx-home"></i>
-      </a>
-    </div>
-  </section>
-
+  <header class="header">
+    <section class="main">
+      <a class="logo" href="#"><img src="folder gambar/logo.jpg"  alt="Logo"></a>
+      <div class="fix">
+        <div class="fix">
+          <a class="a1" href="index.html">
+            <i class="bx bx-home"></i>
+          <a class="a1" href="#id-menu">Daftar Menu</a>
+          </a>
+      </div>
+    </section>
+  
   <div>
     <section class="menu-template" id="id-menu">
       <center>
-        <h3 class="menu-subtitle">JURAGAN &nbsp;&nbsp;BAKSO</h3>
+        <h3 class="menu-subtitle">JURAGAN &nbsp;&nbsp;BAKSO.ID</h3>
       </center>
     </section><br><br>
 
     <form action="order.php" method="post">
       <section class="menu">
         <!-- Menu Bakso Urat -->
-        <article class="menu-section">
-          <img src="folder gambar/bakso urat.jpg" alt="Bakso Urat" class="menu-image">
+        <article class="menu-section"><br>
+          <center><img src="folder gambar/bakso urat.jpg" alt="Bakso Urat" class="menu-image" height="45px"></center>
           <div class="menu-text">
             <h3 class="menu-text-title">Bakso Urat</h3>
             <h3 class="menu-text-title">Rp25.000</h3>
@@ -67,12 +68,13 @@
             <label for="quantity-bakso-urat">Jumlah pesanan:</label>
             <input type="number" id="quantity-bakso-urat" name="bakso_urat" class="quantity" data-menu="Bakso Urat"
               min="0" max="100" value="0" oninput="calculateTotal()">
+              
           </div>
         </article>
 
         <!-- Menu Bakso Telur -->
         <article class="menu-section">
-          <img src="folder gambar/bakso telur.jpg" alt="Bakso Telur" class="menu-image">
+          <center><img src="folder gambar/bakso telur.jpg" alt="Bakso Telur" class="menu-image" height="45px"></center>
           <div class="menu-text">
             <h3 class="menu-text-title">Bakso Telur</h3>
             <h3 class="menu-text-title">Rp30.000</h3>
@@ -85,7 +87,7 @@
 
         <!-- Menu Bakso Lava -->
         <article class="menu-section">
-          <img src="folder gambar/bakso lava.jpg" alt="Bakso Lava" class="menu-image">
+          <center><img src="folder gambar/bakso lava.jpg" alt="Bakso Lava" class="menu-image" height="100px"></center>
           <div class="menu-text">
             <h3 class="menu-text-title">Bakso Lava</h3>
             <h3 class="menu-text-title">Rp35.000</h3>
@@ -98,7 +100,7 @@
 
         <!-- Menu Bakso Iga Sapi -->
         <article class="menu-section">
-          <img src="folder gambar/bakso iga.jpg" alt="Bakso Iga Sapi" class="menu-image">
+          <center><img src="folder gambar/bakso iga.jpg" alt="Bakso Iga Sapi" class="menu-image" height="100px"></center>
           <div class="menu-text">
             <h3 class="menu-text-title">Bakso Iga Sapi</h3>
             <h3 class="menu-text-title">Rp40.000</h3>
