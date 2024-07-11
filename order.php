@@ -18,6 +18,51 @@ function sanitize($data) {
     return htmlspecialchars(stripslashes(trim($data)));
 }
 
+// Function to validate phone number using NFA
+function validatePhone($phone) {
+    $states = [
+        'START' => 'START',
+        'DIGIT' => 'DIGIT',
+        'VALID' => 'VALID',
+        'INVALID' => 'INVALID'
+    ];
+    
+    $currentStates = [$states['START']];
+    
+    for ($i = 0; $i < strlen($phone); $i++) {
+        $char = $phone[$i];
+        $nextStates = [];
+        
+        foreach ($currentStates as $state) {
+            switch ($state) {
+                case $states['START']:
+                    if (ctype_digit($char)) {
+                        $nextStates[] = $states['DIGIT'];
+                    }
+                    break;
+                case $states['DIGIT']:
+                    if (ctype_digit($char)) {
+                        $nextStates[] = $states['DIGIT'];
+                    }
+                    break;
+            }
+        }
+        
+        if (empty($nextStates)) {
+            return false;
+        }
+        
+        $currentStates = $nextStates;
+    }
+    
+    return strlen($phone) >= 10 && strlen($phone) <= 13;
+}
+
+// Function to validate name to ensure it does not contain symbols
+function validateName($name) {
+    return preg_match('/^[a-zA-Z\s]+$/', $name);
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate input data
     $name = sanitize($_POST["name"]);
@@ -25,6 +70,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = sanitize($_POST["phone"]);
     $order_summary = "";
     $total_price = 0;
+
+    // Validate name
+    if (!validateName($name)) {
+        echo "Invalid name format. Name should only contain letters and spaces.";
+        exit;
+    }
+
+    // Validate phone number
+    if (!validatePhone($phone)) {
+        echo "Invalid phone number format.";
+        exit;
+    }
 
     $menu_items = ["bakso_urat" => 25000, "bakso_telur" => 30000, "bakso_lava" => 35000, "bakso_iga" => 40000];
     
@@ -40,7 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($name) && !empty($address) && !empty($phone) && !empty($order_summary) && $total_price > 0) {
         // Prepare and bind
         $stmt = $conn->prepare("INSERT INTO orders (name, address, phone, order_summary, total_price) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssii", $name, $address, $phone, $order_summary, $total_price);
+        $stmt->bind_param("ssssi", $name, $address, $phone, $order_summary, $total_price);
 
         // Execute the query
         if ($stmt->execute()) {
