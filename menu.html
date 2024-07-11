@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Menu Bakso</title>
+  <link rel="icon" href="folder gambar/logo.jpg" type="image/icon type">
+  <link rel="stylesheet" href="styles.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script>
+    function calculateTotal() {
+      const prices = {
+        "Bakso Urat": 25000,
+        "Bakso Telur": 30000,
+        "Bakso Lava": 35000,
+        "Bakso Iga Sapi": 40000
+      };
+
+      let total = 0;
+      let orderSummary = '';
+      const quantities = document.querySelectorAll('.quantity');
+      quantities.forEach((quantity) => {
+        const menu = quantity.dataset.menu;
+        const count = parseInt(quantity.value) || 0;
+        if (count > 0) {
+          total += count * prices[menu];
+          orderSummary += `${menu}: ${count} x Rp${prices[menu]}<br>`;
+        }
+      });
+
+      document.getElementById('order_summary').innerHTML = orderSummary;
+      document.getElementById('total_price').innerText = 'Total: Rp ' + total;
+    }
+
+    function showCustomerDataSection() {
+      document.getElementById('customer_data').style.display = 'block';
+    }
+  </script>
+</head>
+
+<body>
+  <section class="main">
+    <a class="logo" href="#"><img src="folder gambar/logo.jpg" alt="Logo"></a>
+    <div class="fix">
+      <a class="a1" href="#id-menu">Daftar Menu</a>
+      <a class="a1" href="index.html">
+        <i class="bx bx-home"></i>
+      </a>
+    </div>
+  </section>
+
+  <div>
+    <section class="menu-template" id="id-menu">
+      <center>
+        <h3 class="menu-subtitle">JURAGAN &nbsp;&nbsp;BAKSO</h3>
+      </center>
+    </section><br><br>
+
+    <form action="order.php" method="post">
+      <section class="menu">
+        <!-- Menu Bakso Urat -->
+        <article class="menu-section">
+          <img src="folder gambar/bakso urat.jpg" alt="Bakso Urat" class="menu-image">
+          <div class="menu-text">
+            <h3 class="menu-text-title">Bakso Urat</h3>
+            <h3 class="menu-text-title">Rp25.000</h3>
+            <!-- Form Pemesanan -->
+            <label for="quantity-bakso-urat">Jumlah pesanan:</label>
+            <input type="number" id="quantity-bakso-urat" name="bakso_urat" class="quantity" data-menu="Bakso Urat"
+              min="0" max="100" value="0" oninput="calculateTotal()">
+          </div>
+        </article>
+
+        <!-- Menu Bakso Telur -->
+        <article class="menu-section">
+          <img src="folder gambar/bakso telur.jpg" alt="Bakso Telur" class="menu-image">
+          <div class="menu-text">
+            <h3 class="menu-text-title">Bakso Telur</h3>
+            <h3 class="menu-text-title">Rp30.000</h3>
+            <!-- Form Pemesanan -->
+            <label for="quantity-bakso-telur">Jumlah pesanan:</label>
+            <input type="number" id="quantity-bakso-telur" name="bakso_telur" class="quantity" data-menu="Bakso Telur"
+              min="0" max="100" value="0" oninput="calculateTotal()">
+          </div>
+        </article>
+
+        <!-- Menu Bakso Lava -->
+        <article class="menu-section">
+          <img src="folder gambar/bakso lava.jpg" alt="Bakso Lava" class="menu-image">
+          <div class="menu-text">
+            <h3 class="menu-text-title">Bakso Lava</h3>
+            <h3 class="menu-text-title">Rp35.000</h3>
+            <!-- Form Pemesanan -->
+            <label for="quantity-bakso-lava">Jumlah pesanan:</label>
+            <input type="number" id="quantity-bakso-lava" name="bakso_lava" class="quantity" data-menu="Bakso Lava"
+              min="0" max="100" value="0" oninput="calculateTotal()">
+          </div>
+        </article>
+
+        <!-- Menu Bakso Iga Sapi -->
+        <article class="menu-section">
+          <img src="folder gambar/bakso iga.jpg" alt="Bakso Iga Sapi" class="menu-image">
+          <div class="menu-text">
+            <h3 class="menu-text-title">Bakso Iga Sapi</h3>
+            <h3 class="menu-text-title">Rp40.000</h3>
+            <!-- Form Pemesanan -->
+            <label for="quantity-bakso-iga">Jumlah pesanan:</label>
+            <input type="number" id="quantity-bakso-iga" name="bakso_iga" class="quantity" data-menu="Bakso Iga Sapi"
+              min="0" max="100" value="0" oninput="calculateTotal()">
+          </div>
+        </article>
+      </section>
+
+      <div id="order_summary_section">
+        <h2>Pesanan Yang di Order</h2>
+        <div id="order_summary"></div>
+      </div>
+      <h2 id="total_price">Total: Rp 0</h2>
+
+      <button type="button" onclick="showCustomerDataSection()">Lanjutkan Pesanan</button>
+
+      <section id="customer_data" style="display:none;">
+        <h2>Data Pemesan</h2>
+        <label for="name">Nama:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="address">Alamat:</label>
+        <textarea id="address" name="address" required></textarea><br>
+
+        <label for="phone">No Telepon:</label>
+        <input type="text" id="phone" name="phone" required><br>
+
+        <input type="submit" value="Pesan">
+      </section>
+    </form>
+  </div>
+</body>
+
+</html>

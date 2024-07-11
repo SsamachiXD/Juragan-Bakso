@@ -1,0 +1,104 @@
+<html>
+
+<head>
+    <title>Menu</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <section class="main">
+        <a class="logo" href="#"><img src="folder gambar/logo.jpg" height="25px"></a>
+        <div class="fix">
+            <a class="a1" href="index.html">
+                <i class="bx bx-home"></i>
+            </a>
+        </div>
+    </section>
+
+    <div style="background-color:#ff852e;">
+        <section class="menu-template" id="id-menu">
+            <h1 class="menu-title">This is</h1><br>
+            <center>
+                <h3 class="menu-subtitle">O U R &nbsp;&nbsp;M E N U</h3>
+            </center>
+        </section><br><br>
+
+        <section class="menu" style="display: inline;">
+            <div style="clear: both;"></div>
+            <br>
+        </section>
+        <section class="menu" style="display: inline;">
+
+            <!-- first column -->
+            <!-- Menu Bakso Urat -->
+            <article class="menu-section">
+                <img src="folder gambar/bakso urat.jpg" alt="Avatar" class="menu-image">
+                <div class="menu-text">
+                    <h3 class="menu-text-title">Bakso Urat</h3>
+                    <br>
+                    <h3 class="menu-text-title">Rp25.000</h3>
+                    <!-- Form Pemesanan -->
+                    <form class="order-form">
+                        <label for="quantity-bakso-urat">Jumlah pesanan:</label>
+                        <input type="number" id="quantity-bakso-urat" name="quantity" min="1" max="100" value="1">
+                        <button type="submit" class="order-button">Pesan</button>
+                    </form>
+                </div>
+            </article>
+
+
+            <!-- second column -->
+            <article class="menu-section">
+                <img src="folder gambar/bakso telur.jpg" alt="Avatar" class="menu-image">
+                <div class="menu-text">
+                    <h3 class="menu-text-title">Bakso Telur</h3>
+                    <br>
+                    <h3 class="menu-text-title">Rp30.000</h3>
+                    <form class="order-form">
+                        <label for="quantity-bakso-urat">Jumlah Pesanan:</label>
+                        <input type="number" id="quantity-bakso-urat" name="quantity" min="1" max="100" value="1">
+                        <button type="submit" class="order-button">Pesan</button>
+                    </form>
+                </div>
+            </article>
+
+            <!-- third column -->
+            <article class="menu-section">
+                <img src="folder gambar/bakso lava.jpg" alt="Avatar" class="menu-image">
+                <div class="menu-text">
+                    <h3 class="menu-text-title">Bakso Lava</h3>
+                    <br>
+                    <h3 class="menu-text-title">Rp35.000</h3>
+                    <form class="order-form">
+                        <label for="quantity-bakso-urat">Jumlah Pesanan:</label>
+                        <input type="number" id="quantity-bakso-urat" name="quantity" min="1" max="100" value="1">
+                        <button type="submit" class="order-button">Pesan</button>
+                    </form>
+                </div>
+            </article>
+
+            <!-- fourth column -->
+            <article class="menu-section">
+                <img src="folder gambar/bakso iga.jpg" alt="Avatar" class="menu-image">
+                <div class="menu-text">
+                    <h3 class="menu-text-title">Bakso Iga Sapi</h3>
+                    <br>
+                    <h3 class="menu-text-title">Rp40.000</h3>
+                    <form class="order-form">
+                        <label for="quantity-bakso-urat">Jumlah Pesanan:</label>
+                        <input type="number" id="quantity-bakso-urat" name="quantity" min="1" max="100" value="1">
+                        <button type="submit" class="order-button">Pesan</button>
+                    </form>
+                </div>
+            </article>
+
+            <div style="clear: both;"></div>
+            <br>
+        </section>
+        <br>
+
+    </div>
+</body>
+
+</html>
