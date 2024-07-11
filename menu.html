@@ -34,6 +34,30 @@
     function showCustomerDataSection() {
       document.getElementById('customer_data').style.display = 'block';
     }
+
+    function submitOrder(event) {
+      event.preventDefault();
+
+      const formData = new FormData(document.getElementById('order_form'));
+
+      fetch('order.php', {
+        method: 'POST',
+        body: formData
+      })
+        .then(response => response.json())
+        .then(data => {
+          alert(data.message);
+          if (data.status === 'success') {
+            document.getElementById('order_form').reset();
+            document.getElementById('customer_data').style.display = 'none';
+            document.getElementById('total_price').innerText = 'Total: Rp 0';
+            document.getElementById('order_summary').innerHTML = '';
+            // Redirect to index.html after user clicks OK on alert
+            window.location.href = 'index.html';
+          }
+        })
+        .catch(error => console.error('Error:', error));
+    }
   </script>
 </head>
 
@@ -55,7 +79,7 @@
       </center>
     </section><br><br>
 
-    <form action="order.php" method="post">
+    <form id="order_form" onsubmit="submitOrder(event)">
       <section class="menu">
         <!-- Menu Bakso Urat -->
         <article class="menu-section">
@@ -110,26 +134,24 @@
         </article>
       </section>
 
-      <div id="order_summary_section">
-        <h2>Pesanan Yang di Order</h2>
-        <div id="order_summary"></div>
-      </div>
-      <h2 id="total_price">Total: Rp 0</h2>
+      <!-- Rincian Pesanan -->
+      <section class="order-summary">
+        <h3>Rincian Pesanan:</h3>
+        <p id="order_summary"></p>
+        <h3 id="total_price">Total: Rp 0</h3>
+        <button type="button" onclick="showCustomerDataSection()">Isi Data Pelanggan</button>
+      </section>
 
-      <button type="button" onclick="showCustomerDataSection()">Lanjutkan Pesanan</button>
-
-      <section id="customer_data" style="display:none;">
-        <h2>Data Pemesan</h2>
+      <!-- Data Pelanggan -->
+      <section id="customer_data" style="display: none;">
+        <h3>Data Pelanggan:</h3>
         <label for="name">Nama:</label>
         <input type="text" id="name" name="name" required><br>
-
         <label for="address">Alamat:</label>
         <textarea id="address" name="address" required></textarea><br>
-
-        <label for="phone">No Telepon:</label>
+        <label for="phone">Nomor Telepon:</label>
         <input type="text" id="phone" name="phone" required><br>
-
-        <input type="submit" value="Pesan">
+        <button type="submit">Kirim Pesanan</button>
       </section>
     </form>
   </div>
