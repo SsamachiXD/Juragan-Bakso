@@ -575,16 +575,6 @@
     box-shadow: 0 14px 18px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   }
   
-  .new-division {
-    color: white;
-    border-radius: 5px;
-    padding: 20px;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),
-      url("folder gambar/bakso.jpg") center/cover no-repeat;
-    position: relative;
-    background-attachment: fixed;
-  }
-  
   .section-subtitle{
     color: #f99500;
     font-family: SpartanLimport;
@@ -625,6 +615,8 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
   
+
+
   .menu-template{
     height: 40vh;
     width: 100%;
@@ -761,38 +753,12 @@
   }
   
   .menu-image{
-    width:100%;
-    height:100%;
+    width: 110%;
+    height: 100%;
     border-radius: 5%;
   }
   
-  .menu-circle-image{
-    width: 75px;
-  }
-  
-  .menu-button-on{
-    background-color: #E0E5EC;
-    border-radius: 50%;
-    border: 5px solid #E0E5EC;
-    width: 10%;
-    transition: 0.5s;
-    box-shadow: none;
-    outline: none;
-  }
-  
-  .menu-circle-image:hover{
-    cursor: pointer;
-  }
-  
-  .menu-button-off{
-    background-color: #E0E5EC;
-    border-radius: 50%;
-    border: 5px solid #E0E5EC;
-    width: 10%;
-    outline: none;
-    transition: 0.5s;
-    box-shadow: 2px 2px 8px rgb(163,177,198,0.6), -2px -2px 12px    rgba(255,255,255, 0.5);;
-  }
+
   /* CSS untuk Form Pemesanan */
 .order-form {
   display: flex;

@@ -45,6 +45,76 @@ body {
 .fix .a1:hover {
     color: #ff852e;
 }
+    
+.menu-template {
+    text-align: center;
+    padding: 3px;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5));
+    color: white;
+    border-bottom: 2px solid #ffa361;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0 auto;
+}
+
+.menu-section {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    text-align: center;
+    width: calc(50% - 50px);
+    max-width: 300px;
+    transition: max-width 0.3s;
+    margin: 0 auto;
+}
+
+.menu-section img {
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    transition: transform 0.3s, border-radius 0.3s;
+}
+.menu-section input {
+    height: 50%;
+    font-size: 15px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    transition: transform 0.3s, border-radius 0.3s;
+}
+.menu-section img:hover {
+    transform: scale(1.05);
+}
+
+.menu-text-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #ff852e;
+    transition: color 0.3s;
+    text-transform: uppercase;
+}
+.menu-section h4 {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: green;
+    transition: color 0.3s;
+}
+.menu-section label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+    transition: color 0.3s;
+}
 
 .menu {
     display: flex;
@@ -71,80 +141,6 @@ h2 {
     margin-top: 20px;
     text-align: center;
     color: #333;
-    transition: color 0.3s;
-}
-
-.menu-template {
-    text-align: center;
-    padding: 3px;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5));
-    color: white;
-    border-bottom: 2px solid #ffa361;
-    transition: background-color 0.3s, color 0.3s;
-    margin: 0 auto;
-}
-
-.menu-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-    text-align: center;
-    width: calc(50% - 50px);
-    max-width: 300px;
-    transition: max-width 0.3s;
-    margin: 0 auto;
-}
-
-.menu-section img {
-    width: 100%;
-    max-width: 200px;
-    height: 200px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    transition: transform 0.3s, border-radius 0.3s;
-}
-.menu-section input {
-    width: 100%;
-    max-width: 50%;
-    height: 50%;
-    font-size: 15px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 5px;
-    margin-top: 5px;
-    transition: transform 0.3s, border-radius 0.3s;
-}
-
-
-.menu-section img:hover {
-    transform: scale(1.05);
-}
-
-.menu-text-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin: 10px 0;
-    color: #ff852e;
-    transition: color 0.3s;
-    text-transform: uppercase;
-}
-
-.menu-section label {
-    font-size: 14px;
-    font-weight: bold;
-    color: #000000;
-    transition: color 0.3s;
-}
-.menu-section h4 {
-    font-size: 15px;
-    font-weight: bold;
-    margin: 10px 0;
-    color: green;
     transition: color 0.3s;
 }
 
