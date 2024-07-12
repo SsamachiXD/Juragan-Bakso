@@ -87,7 +87,7 @@
           <center><img src="folder gambar/bakso urat.jpg" alt="Bakso Urat" class="menu-image" height="45px"></center>
           <div class="menu-text">
             <h3 class="menu-text-title">Bakso Urat</h3>
-            <h3 class="menu-text-title">Rp25.000</h3>
+            <h4 class="menu-text-title">Rp25.000</h4>
             <!-- Form Pemesanan -->
             <label for="quantity-bakso-urat">Jumlah pesanan:</label>
             <input type="number" id="quantity-bakso-urat" name="bakso_urat" class="quantity" data-menu="Bakso Urat"
@@ -101,7 +101,7 @@
           <center><img src="folder gambar/bakso telur.jpg" alt="Bakso Telur" class="menu-image" height="45px"></center>
           <div class="menu-text">
             <h3 class="menu-text-title">Bakso Telur</h3>
-            <h3 class="menu-text-title">Rp30.000</h3>
+            <h4 class="menu-text-title">Rp30.000</h4>
             <!-- Form Pemesanan -->
             <label for="quantity-bakso-telur">Jumlah pesanan:</label>
             <input type="number" id="quantity-bakso-telur" name="bakso_telur" class="quantity" data-menu="Bakso Telur"
@@ -114,7 +114,7 @@
           <center><img src="folder gambar/bakso lava.jpg" alt="Bakso Lava" class="menu-image" height="100px"></center>
           <div class="menu-text">
             <h3 class="menu-text-title">Bakso Lava</h3>
-            <h3 class="menu-text-title">Rp35.000</h3>
+            <h4 class="menu-text-title">Rp35.000</h4>
             <!-- Form Pemesanan -->
             <label for="quantity-bakso-lava">Jumlah pesanan:</label>
             <input type="number" id="quantity-bakso-lava" name="bakso_lava" class="quantity" data-menu="Bakso Lava"
@@ -127,7 +127,7 @@
           <center><img src="folder gambar/bakso iga.jpg" alt="Bakso Iga Sapi" class="menu-image" height="100px"></center>
           <div class="menu-text">
             <h3 class="menu-text-title">Bakso Iga Sapi</h3>
-            <h3 class="menu-text-title">Rp40.000</h3>
+            <h4 class="menu-text-title">Rp40.000</h4>
             <!-- Form Pemesanan -->
             <label for="quantity-bakso-iga">Jumlah pesanan:</label>
             <input type="number" id="quantity-bakso-iga" name="bakso_iga" class="quantity" data-menu="Bakso Iga Sapi"
@@ -137,26 +137,30 @@
       </section>
 
       <!-- Rincian Pesanan -->
-      <section class="order-summary">
-        <h3>Rincian Pesanan:</h3>
-        <p id="order_summary"></p>
-        <h3 id="total_price">Total: Rp 0</h3>
-        <button type="button" onclick="showCustomerDataSection()">Isi Data Pelanggan</button>
-      </section>
+      <div id="order_summary_section">
+        <h2>Pesanan Yang di Order</h2>
+        <div id="order_summary"></div>
+      </div>
+      <h2 id="total_price">Total: Rp 0</h2>
 
-      <!-- Data Pelanggan -->
-      <section id="customer_data" style="display: none;">
-        <h3>Data Pelanggan:</h3>
+      <p align="center"><button type="button" onclick="showCustomerDataSection()">Lanjutkan Pesanan</button></p>
+
+      <section id="customer_data" style="display:none;">
+        <section class="about-section-center-clearfix" style="display: inline; ">
+        <h2>Data Pemesanan:</h2>
         <label for="name">Nama:</label>
         <input type="text" id="name" name="name" required><br>
+
+        <label for="phone">No Telepon:</label>
+        <input type="text" id="phone" name="phone" required><br>
+
         <label for="address">Alamat:</label>
         <textarea id="address" name="address" required></textarea><br>
-        <label for="phone">Nomor Telepon:</label>
-        <input type="text" id="phone" name="phone" required><br>
-        <button type="submit">Kirim Pesanan</button>
+
+        <p align="center"><button type="submit" value="Submit">Kirim Pesanan</button>
+
       </section>
     </form>
   </div>
 </body>
-
 </html>

@@ -46,6 +46,34 @@ body {
     color: #ff852e;
 }
 
+.menu {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: #E0E5EC;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #E0E5EC;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+h2 {
+    margin-top: 20px;
+    text-align: center;
+    color: #333;
+    transition: color 0.3s;
+}
+
 .menu-template {
     text-align: center;
     padding: 3px;
@@ -79,6 +107,19 @@ body {
     margin-top: 10px;
     transition: transform 0.3s, border-radius 0.3s;
 }
+.menu-section input {
+    width: 100%;
+    max-width: 50%;
+    height: 50%;
+    font-size: 15px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    transition: transform 0.3s, border-radius 0.3s;
+}
+
 
 .menu-section img:hover {
     transform: scale(1.05);
@@ -90,40 +131,20 @@ body {
     margin: 10px 0;
     color: #ff852e;
     transition: color 0.3s;
+    text-transform: uppercase;
 }
+
 .menu-section label {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
-    margin: 10px 0;
     color: #000000;
     transition: color 0.3s;
 }
-
-.menu {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-form {
-    max-width: 600px;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-h2 {
-    margin-top: 20px;
-    text-align: center;
-    color: #333;
+.menu-section h4 {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: green;
     transition: color 0.3s;
 }
 
@@ -166,7 +187,7 @@ textarea {
 
 input[type="submit"] {
     background-color: #ff852e;
-    color: white;
+    background-color: #E0E5EC;
     border: none;
     padding: 15px 20px;
     border-radius: 5px;
@@ -192,7 +213,7 @@ input[type="submit"]:hover {
 .navbar a {
     float: left;
     display: block;
-    color: white;
+    background-color: #E0E5EC;
     text-align: center;
     padding: 14px 20px;
     text-decoration: none;
@@ -227,9 +248,10 @@ input[type="submit"]:hover {
     }
 }
   
+   
   /* Gaya untuk Bagian Ringkasan Pesanan */
   #order_summary_section {
-    background-color: #fff;
+    background-color: #E0E5EC;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -254,46 +276,100 @@ input[type="submit"]:hover {
   
   /* Gaya untuk Elemen Total Harga */
   #total_price {
-    font-size: 18px; /* Ukuran font lebih besar */
+    font-size: 16px; /* Ukuran font lebih besar */
     font-weight: bold; /* Teks tebal */
     margin-top: 20px; /* Jarak atas */
     display: flex;
+    text-transform: uppercase;
     justify-content: center; /* Teks di tengah secara horizontal */
     align-items: center; /* Teks di tengah secara vertikal */
   }
   
-  /* Gaya untuk Tombol */
   button {
-    background-color: #ff852e;
-    color: white;
-    border: none;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    padding: 15px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px;
-    margin: 0 auto;
-    display: block;
     width: 60%;
-    text-align: center;
+    background-color: #E0E5EC;
+    color: black;
+    font-size: 15px;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    transition: background-color 0.3s, transform 0.3s;
+    padding: 14px 15px;
+    margin: 8px 0;
+    border: 1px solid black;
+    transition: 0.5s;
+    cursor: pointer;
+    text-align: center;
   }
-  
+
   button:hover {
-    background-color: #e07324;
-    transform: scale(1.05);
+    background-color: #f99500;
+    color: white;
+    opacity: 1;
+    border: 1px solid #f99500;
+    border-radius: 6px;
+    box-shadow: 0 14px 18px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    outline: none; 
+    text-align: center;
   }
   
   #customer_data {
     display: none;
     max-width: 600px;
     margin: 20px auto;
-    background-color: #fff;
+    background-color: #E0E5EC;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, box-shadow 0.3s;
+
+  }  
+  .customer_data label{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  }
+  h2{
+ 
+    text-transform: uppercase;
   } 
+  input[type="customer_data"],
+  textarea {
+    width: 100%;
+    background-color: #E0E5EC;
+    padding: 12px 15px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+  }
+  input[type="name"] {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #E0E5EC;
+    margin: 8px 0;
+    border: none;
+    border-bottom: 1px solid black;
+    box-sizing: border-box;
+    outline: none;
+  }
+  input[type="address"] {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #E0E5EC;
+    margin: 8px 0;
+    border: none;
+    border-bottom: 1px solid black;
+    box-sizing: border-box;
+    outline: none;
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #E0E5EC;
+    margin: 8px 0;
+    border: none;
+    border-bottom: 1px solid black;
+    box-sizing: border-box;
+    outline: none;
+  }
