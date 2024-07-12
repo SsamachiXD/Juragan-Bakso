@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate input data
     $name = sanitize($_POST["name"]);
     $address = sanitize($_POST["address"]);
-    $phone = sanitize($_POST["phone"]);
+    $phone = sanitize($_POST["number"]);
     $total_price = 0;
 
     // Validate name
