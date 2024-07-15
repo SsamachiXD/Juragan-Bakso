@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Konfirmasi Pesanan</title>
+  <link rel="icon" href="folder gambar/logo.jpg" type="image/icon type">
+  <link rel="stylesheet" href="styles.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script>
+    function editOrder() {
+      // Redirect back to the order form page for editing
+      window.location.href = 'index.html';
+    }
+
+    function cancelOrder() {
+      if (confirm('Apakah Anda yakin ingin membatalkan pesanan ini?')) {
+        // Logic to cancel the order
+        alert('Pesanan Anda telah dibatalkan.');
+        window.location.href = 'index.html';
+      }
+    }
+
+    function updateOrder(event) {
+      event.preventDefault();
+      alert('Pesanan Anda telah diperbarui.');
+      // Logic to update the order
+    }
+  </script>
+</head>
+
+<body>
+  <header class="header">
+    <section class="main">
+      <a class="logo" href="#"><img src="folder gambar/logo.jpg" alt="Logo"></a>
+      <div class="fix">
+        <a class="a1" href="index.html">HOME <i class="bx bx-home"></i></a>
+      </div>
+    </section>
+
+    <div>
+      <section class="menu-template" id="id-menu">
+        <center>
+          <h3 class="menu-subtitle">JURAGAN &nbsp;&nbsp;BAKSO.ID</h3>
+        </center>
+      </section>
+
+      <section class="menu">
+        <article class="menu-section">
+          <h2>Konfirmasi Pesanan</h2>
+          <div id="order_details">
+            <h3>Rincian Pesanan Anda:</h3>
+            <!-- Display order details here. Example: -->
+            <p>Bakso Urat: 2 x Rp25.000</p>
+            <p>Bakso Telur: 1 x Rp30.000</p>
+            <p>Bakso Lava: 0 x Rp35.000</p>
+            <p>Bakso Iga Sapi: 0 x Rp40.000</p>
+            <h3>Total: Rp 80.000</h3>
+          </div>
+
+          <h3>Data Pemesanan:</h3>
+          <form id="update_order_form" onsubmit="updateOrder(event)">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" value="Nama Pelanggan" required><br>
+
+            <label for="number">No Telepon:</label>
+            <input type="text" id="number" name="number" value="08123456789" required><br>
+
+            <label for="address">Alamat:</label>
+            <textarea id="address" name="address" required>Alamat Pelanggan</textarea><br>
+
+            <button type="button" onclick="editOrder()">Edit Pesanan</button>
+            <button type="submit">Update Pesanan</button>
+            <button type="button" onclick="cancelOrder()">Batalkan Pesanan</button>
+          </form>
+        </article>
+      </section>
+    </div>
+</body>
+
+</html>

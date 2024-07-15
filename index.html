@@ -26,7 +26,7 @@
     <section class="main">
       <a class="logo" href="#"><img src="folder gambar/logo.jpg" height="25px"></a>
       <div class="fix">
-        <a class="a1" href="menu.html">
+        <a class="a1" href="menu.html">ORDER
           <i class="bx bx-cart-alt"></i>
         </a>
         <a class="a1" href="#id-contact">CONTACT US</a>
@@ -272,7 +272,7 @@
 
       <!-- second column -->
       <article class="about-info-slider">
-        <h3 class="response-title">TESTIMONI JURAGAN BAKSO.ID</h3>
+        <h3 class="response-title">EXAMPLE TESTIMONI JURAGAN BAKSO.ID</h3>
         <!--end section title -->
         <div class="slideshow-container">
 
@@ -461,6 +461,28 @@
       <p class="fontsettings">Copyright © 2024 | <a class="colorcover-link" href="#">Juragan Bakso.id</a></p><br><br>
   </div>
   </center>
+  <script>
+    function submitOrder(event) {
+      event.preventDefault();
+  
+      const formData = new FormData(document.getElementById('order_form'));
+  
+      fetch('order.php', {
+        method: 'POST',
+        body: formData
+      })
+        .then(response => response.json())
+        .then(data => {
+          alert(data.message);
+          if (data.status === 'success') {
+            // Redirect to confirm_order.html after successful order submission
+            window.location.href = 'confirm_order.html';
+          }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+  </script>
+  
 </body>
 
 </html>

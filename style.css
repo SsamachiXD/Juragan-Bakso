@@ -232,7 +232,7 @@
     font-size: 2rem;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
     color: white;
-    /* animation */
+
     animation-name: slideup;
     -webkit-animation-name: slideup;
     animation-duration: 1s;

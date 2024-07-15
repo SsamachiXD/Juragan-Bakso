@@ -1,14 +1,6 @@
 html {
     scroll-behavior: smooth;
   }
-.header {
-    min-height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),
-      url("folder gambar/bakso.jpg") center/cover no-repeat;
-    position: relative;
-    background-attachment: fixed;
-    background-color: #222;
-}
 
 body {
     font-family: Arial, sans-serif;
@@ -19,24 +11,38 @@ body {
     transition: background-color 0.3s;
 }
 
+.header {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),
+      url("folder gambar/bakso.jpg") center/cover no-repeat;
+    position: relative;
+    background-attachment: fixed;
+    background-color: #222;
+
+}
 .main {
-    padding: 20px;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5));
-    color: white;
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background-color 0.3s;
-
+    width: 100%;
+    margin-top: 10px 0;
+    top: 10px;
+}
+.main a{
+    display: inline;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5));
 
 }
 .logo img {
     height: 30px;
     transition: height 0.3s;
+    margin-top: 10px 0;
+
 }
 
 .fix .a1 {
-    color: white;
+    color: #f8f9fa;
     text-decoration: none;
     font-size: 24px;
     transition: color 0.3s;
