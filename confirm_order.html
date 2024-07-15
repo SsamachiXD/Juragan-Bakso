@@ -3,78 +3,53 @@
 
 <head>
   <title>Konfirmasi Pesanan</title>
-  <link rel="icon" href="folder gambar/logo.jpg" type="image/icon type">
-  <link rel="stylesheet" href="styles.css" />
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <script>
-    function editOrder() {
-      // Redirect back to the order form page for editing
-      window.location.href = 'index.html';
-    }
-
-    function cancelOrder() {
-      if (confirm('Apakah Anda yakin ingin membatalkan pesanan ini?')) {
-        // Logic to cancel the order
-        alert('Pesanan Anda telah dibatalkan.');
-        window.location.href = 'index.html';
-      }
-    }
-
-    function updateOrder(event) {
-      event.preventDefault();
-      alert('Pesanan Anda telah diperbarui.');
-      // Logic to update the order
-    }
-  </script>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <header class="header">
-    <section class="main">
-      <a class="logo" href="#"><img src="folder gambar/logo.jpg" alt="Logo"></a>
-      <div class="fix">
-        <a class="a1" href="index.html">HOME <i class="bx bx-home"></i></a>
+  <div class="order-confirmation">
+    <header class="header">
+      <section class="main">
+        <a class="logo" href="#"><img src="folder gambar/logo.jpg" height="25px" alt="Logo"></a>
+        <nav class="fix">
+          <a class="a1" href="menu.html">ORDER</a>
+          <a class="a1" href="#id-contact">CONTACT US</a>
+          <a class="a1" href="#feedback">FEEDBACK</a>
+          <a class="a1" href="#id-about">ABOUT US</a>
+          <a class="a1" href="#id-menu">MENU</a>
+          <a class="a1" href="#">HOME</a>
+        </nav>
+      </section>
+      <div class="banner">
+        <h1 class="banner-title">Konfirmasi Pesanan Anda</h1>
       </div>
+    </header>
+
+    <div class="content-divider"></div>
+
+    <section class="order-details">
+      <h2>Rincian Pesanan</h2>
+      <form action="submit_order.php" method="POST">
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" name="nama" placeholder="Nama Lengkap" required />
+
+        <label for="alamat">Alamat Pengiriman</label>
+        <input type="text" id="alamat" name="alamat" placeholder="Alamat Pengiriman" required />
+
+        <label for="telepon">Nomor Telepon</label>
+        <input type="tel" id="telepon" name="telepon" placeholder="Nomor Telepon" required />
+
+        <label for="pesanan">Pesanan Anda</label>
+        <textarea id="pesanan" name="pesanan" placeholder="Rincian Pesanan Anda" style="height:200px" required></textarea>
+
+        <input type="submit" value="Konfirmasi Pesanan" />
+      </form>
     </section>
 
-    <div>
-      <section class="menu-template" id="id-menu">
-        <center>
-          <h3 class="menu-subtitle">JURAGAN &nbsp;&nbsp;BAKSO.ID</h3>
-        </center>
-      </section>
-
-      <section class="menu">
-        <article class="menu-section">
-          <h2>Konfirmasi Pesanan</h2>
-          <div id="order_details">
-            <h3>Rincian Pesanan Anda:</h3>
-            <!-- Display order details here. Example: -->
-            <p>Bakso Urat: 2 x Rp25.000</p>
-            <p>Bakso Telur: 1 x Rp30.000</p>
-            <p>Bakso Lava: 0 x Rp35.000</p>
-            <p>Bakso Iga Sapi: 0 x Rp40.000</p>
-            <h3>Total: Rp 80.000</h3>
-          </div>
-
-          <h3>Data Pemesanan:</h3>
-          <form id="update_order_form" onsubmit="updateOrder(event)">
-            <label for="name">Nama:</label>
-            <input type="text" id="name" name="name" value="Nama Pelanggan" required><br>
-
-            <label for="number">No Telepon:</label>
-            <input type="text" id="number" name="number" value="08123456789" required><br>
-
-            <label for="address">Alamat:</label>
-            <textarea id="address" name="address" required>Alamat Pelanggan</textarea><br>
-
-            <button type="button" onclick="editOrder()">Edit Pesanan</button>
-            <button type="submit">Update Pesanan</button>
-            <button type="button" onclick="cancelOrder()">Batalkan Pesanan</button>
-          </form>
-        </article>
-      </section>
-    </div>
+    <footer class="footer">
+      <p>&copy; 2023 Juragan Bakso.id. All rights reserved.</p>
+    </footer>
+  </div>
 </body>
 
 </html>
