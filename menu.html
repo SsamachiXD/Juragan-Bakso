@@ -53,7 +53,7 @@
             document.getElementById('total_price').innerText = 'Total: Rp 0';
             document.getElementById('order_summary').innerHTML = '';
             // Redirect to index.html after user clicks OK on alert
-            window.location.href = 'confirm_order.php';
+            //window.location.href = 'view_order.php';
           }
         })
         .catch(error => console.error('Error:', error));
@@ -65,8 +65,8 @@
     <section class="main">
       <a class="logo" href="#"><img src="folder gambar/logo.jpg"  alt="Logo"></a>
       <div class="fix">
-          <a class="a1" href="index.html">HOME <i class="bx bx-home"></i>
-          </a>
+          <a class="a1" href="index.html"><i class="bx bx-home"></i></a>
+          <a class="a1" href="view_orders.php">Lihat Pesanan<i class="bx money-withdraw"></i></a>
       </div>
     </section>
   
