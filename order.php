@@ -21,47 +21,12 @@ function sanitize($data) {
     return htmlspecialchars(stripslashes(trim($data)));
 }
 
-// Function to validate phone number using NFA
+// Function to validate phone number
 function validatePhone($phone) {
-    $states = [
-        'START' => 'START',
-        'DIGIT' => 'DIGIT',
-        'VALID' => 'VALID',
-        'INVALID' => 'INVALID'
-    ];
-    
-    $currentStates = [$states['START']];
-    
-    for ($i = 0; $i < strlen($phone); $i++) {
-        $char = $phone[$i];
-        $nextStates = [];
-        
-        foreach ($currentStates as $state) {
-            switch ($state) {
-                case $states['START']:
-                    if (ctype_digit($char)) {
-                        $nextStates[] = $states['DIGIT'];
-                    }
-                    break;
-                case $states['DIGIT']:
-                    if (ctype_digit($char)) {
-                        $nextStates[] = $states['DIGIT'];
-                    }
-                    break;
-            }
-        }
-        
-        if (empty($nextStates)) {
-            return false;
-        }
-        
-        $currentStates = $nextStates;
-    }
-    
-    return strlen($phone) >= 10 && strlen($phone) <= 13;
+    return preg_match('/^\d{10,13}$/', $phone);
 }
 
-// Function to validate name to ensure it does not contain symbols
+// Function to validate name
 function validateName($name) {
     return preg_match('/^[a-zA-Z\s]+$/', $name);
 }
@@ -85,7 +50,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    $menu_items = ["bakso_urat" => 25000, "bakso_telur" => 30000, "bakso_lava" => 35000, "bakso_iga" => 40000];
+    // Check if the phone number already exists
+    $checkSql = "SELECT * FROM orders WHERE phone = ?";
+    $stmt = $conn->prepare($checkSql);
+    $stmt->bind_param("s", $phone);
+    $stmt->execute();
+    $checkResult = $stmt->get_result();
+
+    if ($checkResult->num_rows > 0) {
+        echo json_encode(["status" => "error", "message" => "Nomor telepon sudah terdaftar!"]);
+        exit();
+    }
+
+    $menu_items = [
+        "bakso_urat" => 25000,
+        "bakso_telur" => 30000,
+        "bakso_lava" => 35000,
+        "bakso_iga" => 40000
+    ];
     
     foreach ($menu_items as $item => $price) {
         if (isset($_POST[$item]) && is_numeric($_POST[$item]) && $_POST[$item] > 0) {
