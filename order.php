@@ -103,11 +103,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Execute the query
         if ($stmt->execute()) {
-            $last_insert_id = $conn->insert_id;
-            echo json_encode(["status" => "success", "message" => "Orderan kamu berhasil dibuat", "order_id" => $last_insert_id]);
+            echo json_encode(["status" => "success", "message" => "Orderan kamu berhasil dibuat"]);
         } else {
             echo json_encode(["status" => "error", "message" => "Error: " . $stmt->error]);
         }
+
         // Close the statement
         $stmt->close();
     } else {
