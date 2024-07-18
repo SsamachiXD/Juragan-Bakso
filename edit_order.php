@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             font-family: Arial, sans-serif;
             background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)),
                         url("folder gambar/bakso.jpg") center/cover no-repeat;
-    
+                        margin-top: 0;
         }
         .main {
             position: fixed;
@@ -73,17 +73,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             justify-content: flex-end;
             align-items: center;
             width: 100%;
-            padding: 10px 20px;
+            padding: 10px 10px;
             top: 0;
         }
-        .main a {
+            .main a {
             display: inline;
             background: transparent;
             color: #f8f9fa;
             text-decoration: none;
             font-size: 24px;
             transition: color 0.3s;
-            padding: 10px 20px;
+            padding: 15px 10px;
             border-radius: 4px;
         }
             .main a:hover {

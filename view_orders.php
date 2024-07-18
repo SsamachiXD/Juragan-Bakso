@@ -40,7 +40,7 @@
             text-decoration: none;
             font-size: 24px;
             transition: color 0.3s;
-            padding: 10px 20px;
+            padding: 10px 10px;
             border-radius: 4px;
         }
             .main a:hover {
