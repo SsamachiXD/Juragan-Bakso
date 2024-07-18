@@ -43,12 +43,12 @@
             padding: 10px 20px;
             border-radius: 4px;
         }
-        .main a:hover {
-            color: #ff852e;
-        }
-        .a1 i {
-            font-size: 20px;
-        }
+            .main a:hover {
+                color: #ff852e;
+            }
+            .a1 i {
+                font-size: 20px; /* Mengatur ukuran ikon */
+            }
         h2 {
             text-align: center;
             margin-bottom: 20px;
@@ -138,7 +138,7 @@
     <section class="main">
       <div class="fix">
       <a class="a1" href="index.html"><i class="bx bx-home">HOME</i></a>
-      <a class="a1" href="menu.html"><i class='bx bx-arrow-back' >PESAN LAGI</i></a>
+      <a class="a1" href="menu.html"><i class='bx bx-arrow-back' >ORDER</i></a>
       </div>
     </section>
 
