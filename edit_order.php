@@ -60,6 +60,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="icon" href="folder gambar/logo.jpg" type="image/icon type">
     <link rel="stylesheet" href="styles.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)),
+                        url("folder gambar/bakso.jpg") center/cover no-repeat; /* Gradient overlay and image background */
+        }
+        .main {
+            position: fixed;
+            display: flex;
+            justify-content: flex-end; /* Align to the right */
+            align-items: center;
+            width: 100%;
+            padding: 10px 20px; /* Adjust padding */
+            top: 0;
+        }
+        .main a {
+            display: inline;
+            background: transparent;
+            color: #f8f9fa;
+            text-decoration: none;
+            font-size: 24px;
+            transition: color 0.3s;
+            padding: 10px 20px; /* Add padding for clickable area */
+            border-radius: 4px; /* Add border radius for better styling */
+        }
+            .main a:hover {
+                color: #ff852e;
+            }
+            .a1 {
+            margin-right: 20px; /* Mengatur jarak antar ikon */
+            margin-top: 20px;   /* Jarak atas 20px */
+            margin-bottom: 30px; /* Jarak bawah 30px */
+            }
+
+            .a1 i {
+                font-size: 20px; /* Mengatur ukuran ikon */
+            }
+        </style>
+
     <script>
         function calculateTotal() {
             const prices = {
@@ -107,6 +146,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </script>
 </head>
 <body>
+<section class="main">
+      <div class="fix">
+          <a class="a1" href="view_orders.php"><i class='bx bx-basket'>PESANAN</i></a>
+      </div>
+    </section>
     <section class="menu-template" id="id-menu">
         <center>
             <h3 class="menu-subtitle">JURAGAN &nbsp;&nbsp;BAKSO.ID</h3>
