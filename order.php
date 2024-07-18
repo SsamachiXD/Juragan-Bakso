@@ -21,9 +21,38 @@ function sanitize($data) {
     return htmlspecialchars(stripslashes(trim($data)));
 }
 
-// Function to validate phone number
+// Function to validate phone number using FSA
 function validatePhone($phone) {
-    return preg_match('/^\d{10,13}$/', $phone);
+    $states = ['START', 'DIGIT', 'VALID'];
+    $currentState = 'START';
+    
+    for ($i = 0; $i < strlen($phone); $i++) {
+        $char = $phone[$i];
+        
+        switch ($currentState) {
+            case 'START':
+                if (ctype_digit($char)) {
+                    $currentState = 'DIGIT';
+                } else {
+                    return false;
+                }
+                break;
+                
+            case 'DIGIT':
+                if (ctype_digit($char)) {
+                    $currentState = 'DIGIT';
+                } else {
+                    return false;
+                }
+                break;
+        }
+    }
+    
+    if ($currentState == 'DIGIT' && strlen($phone) >= 10 && strlen($phone) <= 13) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 // Function to validate name
@@ -58,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $checkResult = $stmt->get_result();
 
     if ($checkResult->num_rows > 0) {
-        echo json_encode(["status" => "error", "message" => "Nomor telepon sudah terdaftar!"]);
+        echo json_encode(["status" => "error", "message" => "Nomor telepon ini sudah terdaftar!"]);
         exit();
     }
 
