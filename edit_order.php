@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("ssis", $name, $address, $total_price, $phone);
 
     if ($stmt->execute()) {
-        echo json_encode(["status" => "success", "message" => "Order updated successfully"]);
+        echo json_encode(["status" => "success", "message" => "Order anda berhasil diperbarui."]);
     } else {
         echo json_encode(["status" => "error", "message" => "Error updating order: " . $stmt->error]);
     }
@@ -83,10 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             document.getElementById('order_summary').innerHTML = orderSummary;
             document.getElementById('total_price').innerText = 'Total: Rp ' + total;
-        }
-
-        function showCustomerDataSection() {
-            document.getElementById('customer_data').style.display = 'block';
+            document.getElementById('hidden_total_price').value = total;
         }
 
         function submitOrder(event) {
@@ -110,16 +107,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </script>
 </head>
 <body>
-    <!-- <header class="header">
-        <section class="main">
-            <a class="logo" href="#"><img src="folder gambar/logo.jpg" alt="Logo"></a>
-            <div class="fix">
-                <a class="a1" href="index.html">HOME <i class="bx bx-home"></i></a>
-                <a href="view_orders.php">Lihat Pesanan</a>
-            </div>
-        </section>
-    </header> -->
-
     <section class="menu-template" id="id-menu">
         <center>
             <h3 class="menu-subtitle">JURAGAN &nbsp;&nbsp;BAKSO.ID</h3>
@@ -179,8 +166,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <h2 id="total_price">Total: Rp <?php echo $row['total_price']; ?></h2>
 
-        <!-- <p align="center"><button type="button" onclick="showCustomerDataSection()">Lanjutkan Pesanan</button></p> -->
-
         <section id="customer_data" style="display:block;">
             <section class="about-section-center-clearfix" style="display: inline;">
                 <h2>Data Pemesanan:</h2>
@@ -193,7 +178,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label for="address">Alamat:</label>
                 <textarea id="address" name="address" required><?php echo $row['address']; ?></textarea><br>
 
-                <input type="hidden" id="total_price" name="total_price" value="<?php echo $row['total_price']; ?>">
+                <input type="hidden" id="hidden_total_price" name="total_price" value="<?php echo $row['total_price']; ?>">
 
                 <p align="center"><button type="submit" value="Submit">Update Order</button>
             </section>
