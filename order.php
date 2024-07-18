@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Execute the query
         if ($stmt->execute()) {
-            echo json_encode(["status" => "success", "message" => "Orderan kamu berhasil dibuat"]);
+            echo json_encode(["status" => "success", "message" => "Orderan kamu berhasil dibuat, Silahkan cek di pesanan."]);
         } else {
             echo json_encode(["status" => "error", "message" => "Error: " . $stmt->error]);
         }
