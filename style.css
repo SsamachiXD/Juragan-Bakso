@@ -180,37 +180,43 @@
       -webkit-transform: translateX(0%);
     }
   }
-.main {
+  
+  .main{
+    position: absolute;
+  }
+  
+  .main a {
+    float: right;
+      background: none;
+      padding: 15px;
+      padding-right:2%;
+      letter-spacing: 3px;
+      text-align: center;
+      text-transform: capitalize;
+      color: #f8f9fa;
+      display: inline;
+      text-decoration: none;
+      transition: 0.5s;
+      font-weight: 500;
+      font-size: medium;
+  }
+  
+  .fix-background{
     position: fixed;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 28px;
     width: 100%;
-    margin-top: 10px 0;
-    top: 10px;
-}
-.main a{
-    display: inline;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5));
-
-}
-.logo img {
-    height: 30px;
-    transition: height 0.3s;
-    margin-top: 10px 0;
-
-}
-
-.fix .a1 {
-    color: #f8f9fa;
-    text-decoration: none;
-    font-size: 24px;
-    transition: color 0.3s;
-}
-
-.fix .a1:hover {
-    color: #ff852e;
-}
+    background: none;
+    color: white;
+    z-index: 1;
+  } 
+  
+  .a1{
+    float: right;
+  }
+  
+  .a1:hover {
+    color: #f8b563;
+  }
   
   .banner {
     position: absolute;
