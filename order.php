@@ -79,6 +79,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
+    // Ensure address is not empty
+    if (empty($address)) {
+        echo json_encode(["status" => "error", "message" => "Alamat harus diisi!"]);
+        exit;
+    }
+
     // Check if the phone number already exists
     $checkSql = "SELECT * FROM orders WHERE phone = ?";
     $stmt = $conn->prepare($checkSql);
