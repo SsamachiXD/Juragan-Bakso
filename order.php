@@ -81,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Ensure address is not empty
     if (empty($address)) {
-        echo json_encode(["status" => "error", "message" => "Alamat harus diisi!"]);
+        echo json_encode(["status" => "error", "message" => "Alamat harus di isi terlebih dahulu!"]);
         exit;
     }
 
